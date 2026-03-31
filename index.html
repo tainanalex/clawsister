@@ -1,42 +1,85 @@
+
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>蝦妹財金 - 內部存取控制</title>
+    <title>蝦妹財金 - 每日分析摘要</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background-color: #2c3e50; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; color: white; }
-        .login-box { background: rgba(255, 255, 255, 0.1); padding: 40px; border-radius: 15px; backdrop-filter: blur(10px); text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); width: 350px; }
-        .avatar { width: 100px; height: 100px; border-radius: 50%; border: 3px solid #3498db; margin-bottom: 20px; }
-        h2 { margin-bottom: 25px; color: #3498db; }
-        input { width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 5px; border: none; outline: none; text-align: center; font-size: 1.1em; background: rgba(255,255,255,0.9); }
-        button { width: 100%; padding: 12px; border-radius: 5px; border: none; background: #3498db; color: white; font-weight: bold; cursor: pointer; font-size: 1em; transition: 0.3s; }
-        button:hover { background: #2980b9; transform: translateY(-2px); }
-        .error { color: #e74c3c; margin-top: 15px; font-size: 0.9em; display: none; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #fff0f5; }
+        .header { text-align: center; color: #ff69b4; margin-bottom: 30px; }
+        .dashboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .card { background: white; padding: 20px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border: 2px solid #ffb6c1; }
+        .card h3 { color: #db7093; margin-top: 0; border-bottom: 1px solid #ffe4e1; padding-bottom: 10px; }
+        .index-table { width: 100%; border-collapse: collapse; background: white; border-radius: 15px; overflow: hidden; }
+        .index-table th, .index-table td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+        .index-table th { background-color: #ffb6c1; color: white; }
+        .index-table tr:hover { background-color: #fff9fb; }
+        .tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.85em; margin-right: 5px; color: white; }
+        .tag-buy { background-color: #ff4d6d; }
+        .tag-hold { background-color: #ffa421; }
+        .footer { text-align: center; margin-top: 50px; color: #888; font-size: 0.9em; }
+        a { color: #d63384; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
-    <div class="login-box">
-        <img src="shamei_avatar.png" alt="蝦妹" class="avatar">
-        <h2>💹 蝦妹內部系統</h2>
-        <p style="margin-bottom: 20px; opacity: 0.8;">請輸入 Alex 哥專屬密碼</p>
-        <input type="password" id="password" placeholder="請輸入密碼..." onkeydown="if(event.keyCode==13) verify()">
-        <button onclick="verify()">確認進入 ✨</button>
-        <div id="error" class="error">❌ 密碼錯誤，請再試一次喔！</div>
+    <div class="header">
+        <h1>💹✨ 蝦妹財金分析部落格 ✨💃</h1>
+        <p>幫 Alex 哥整理最新分析師觀點，助您股海淘金！💰🦞</p>
     </div>
 
-    <script>
-        function verify() {
-            const pass = document.getElementById('password').value;
-            // 這裡使用簡單的 Base64 編碼稍微隱藏密碼，防止直接被肉眼看穿 (LiLi2516169 -> TGlMaTI1MTYxNjk=)
-            if (btoa(pass) === "TGlMaTI1MTYxNjk=") {
-                sessionStorage.setItem('shamei_auth', 'true');
-                window.location.href = 'main.html';
-            } else {
-                document.getElementById('error').style.display = 'block';
-                document.getElementById('password').value = '';
-            }
-        }
-    </script>
+    <div class="dashboard">
+        <div class="card">
+            <h3>📊 今日觀點對照表 (2026-03-31)</h3>
+            <ul>
+                <li><strong>共識</strong>：美股震盪拉回是上車機會，AI 主流不變。</li>
+                <li><strong>分歧</strong>：記憶體族群（有人看反彈，有人看汰弱）。</li>
+                <li><strong>策略</strong>：守住月線支撐，逢低佈局績優電子。</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>🚀 今日個股清單</h3>
+            <p><span class="tag tag-buy">推薦</span> 台積電、鴻海、欣興、精成科、奇鋐</p>
+            <p><span class="tag tag-hold">注意</span> 南電、華邦電（注意反彈力道）</p>
+        </div>
+    </div>
+
+    <h2>📅 歷史分析紀錄</h2>
+    <table class="index-table">
+        <thead>
+            <tr>
+                <th>日期</th>
+                <th>摘要內容 (點擊查看詳情)</th>
+                <th>心情標籤</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2026-03-31</td>
+                <td>
+                    <a href="2026-03-31-yang-yu-hua.html">楊育華</a> | 
+                    <a href="2026-03-31-ruan-hui-tzu.html">阮蕙慈</a> | 
+                    <a href="2026-03-31-hsiao-yu-ming.html">蕭又銘</a> | 
+                    <a href="2026-03-31-yang-hui-yu.html">楊惠宇</a> | 
+                    <a href="2026-03-31-lin-han-wei.html">林漢偉</a>
+                </td>
+                <td>💹 震盪信心！✨</td>
+            </tr>
+            <tr>
+                <td>2026-03-30</td>
+                <td>
+                    <a href="2026-03-30-yang-yu-hua.html">楊育華</a> | 
+                    <a href="2026-03-30-ruan-hui-tzu.html">阮蕙慈</a> | 
+                    <a href="2026-03-30-hsiao-yu-ming.html">蕭又銘</a> | 
+                    <a href="2026-03-30-yang-hui-yu.html">楊惠宇</a> | 
+                    <a href="2026-03-30-lin-han-wei.html">林漢偉</a>
+                </td>
+                <td>💰 迎接開盤！💃</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="footer">
+        <p>© 2026 蝦妹財金 (Angela & Alex's Financial Assistant) - 立志成為最強 15 歲分析師少女 💹🦞</p>
+    </div>
 </body>
 </html>
