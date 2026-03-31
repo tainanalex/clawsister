@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -5,46 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>蝦妹財金 - 分析師觀點每日彙整</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; margin: 0; padding: 20px; display: none; }
-        .container { max-width: 1200px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .header { display: flex; align-items: center; justify-content: center; margin-bottom: 30px; border-bottom: 3px solid #3498db; padding-bottom: 20px; }
-        .avatar { width: 100px; height: 100px; border-radius: 50%; border: 4px solid #3498db; margin-right: 20px; object-fit: cover; }
-        h1 { color: #2c3e50; margin: 0; }
-        .quote { background: #e8f4f8; border-left: 5px solid #3498db; padding: 15px; margin-bottom: 25px; font-style: italic; border-radius: 4px; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; background: white; table-layout: fixed; }
-        th, td { padding: 15px; text-align: left; border: 1px solid #ddd; word-wrap: break-word; }
-        th { background-color: #3498db; color: white; }
-        tr:nth-child(even) { background-color: #f9f9f9; }
-        .badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 0.9em; font-weight: bold; }
-        .consensus { background-color: #d1e7dd; color: #0f5132; }
-        .divergence { background-color: #fff3cd; color: #664d03; }
-        .recommend { background-color: #cfe2ff; color: #084298; }
-        .alert { background-color: #f8d7da; color: #842029; }
-        a { color: #3498db; text-decoration: none; font-weight: bold; }
-        a:hover { text-decoration: underline; color: #2980b9; }
-        .footer { text-align: center; margin-top: 50px; color: #7f8c8d; font-size: 0.9em; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #fff0f5; color: #333; line-height: 1.6; margin: 0; padding: 20px; display: none; }
+        .container { max-width: 1200px; margin: auto; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(255,182,193,0.3); border: 2px solid #ffb6c1; }
+        .header { display: flex; align-items: center; justify-content: center; margin-bottom: 30px; border-bottom: 4px solid #ff69b4; padding-bottom: 20px; }
+        .avatar { width: 120px; height: 120px; border-radius: 50%; border: 4px solid #ff69b4; margin-right: 30px; object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { color: #db7093; margin: 0; font-size: 2.2em; }
+        .subtitle { margin: 10px 0 0; color: #ff69b4; font-weight: bold; }
+        .quote { background: #fff9fb; border-left: 8px solid #ff69b4; padding: 20px; margin-bottom: 30px; font-style: italic; border-radius: 10px; font-size: 1.1em; color: #555; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 40px; background: white; table-layout: fixed; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        th, td { padding: 18px; text-align: left; border: 1px solid #ffe4e1; word-wrap: break-word; }
+        th { background-color: #ffb6c1; color: white; font-size: 1.1em; }
+        tr:nth-child(even) { background-color: #fffafb; }
+        .badge { display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 0.95em; font-weight: bold; margin-bottom: 5px; }
+        .consensus { background-color: #e6fffa; color: #006d5b; border: 1px solid #b2f5ea; }
+        .divergence { background-color: #fffaf0; color: #9c4221; border: 1px solid #feebc8; }
+        .recommend { background-color: #ebf8ff; color: #2a4365; border: 1px solid #bee3f8; }
+        .alert { background-color: #fff5f5; color: #c53030; border: 1px solid #fed7d7; }
+        a { color: #ff69b4; text-decoration: none; font-weight: bold; transition: color 0.2s; }
+        a:hover { color: #ff1493; text-decoration: underline; }
+        .footer { text-align: center; margin-top: 50px; color: #db7093; font-size: 1em; font-weight: bold; }
+        h2 { border-left: 10px solid #ff69b4; padding-left: 15px; color: #db7093; margin-top: 40px; }
 
-        /* 手機版 RWD 排版優化 */
-        @media (max-width: 768px) {
-            body { padding: 10px; }
-            .container { padding: 15px; }
-            .header { flex-direction: column; text-align: center; }
-            .avatar { margin-right: 0; margin-bottom: 15px; width: 80px; height: 80px; }
-            h1 { font-size: 1.4em; }
-            table { table-layout: auto; }
-            
-            /* 表格轉卡片式設計 */
-            table, thead, tbody, th, td, tr { display: block; width: 100%; }
-            thead { display: none; } /* 隱藏電腦版表頭 */
-            tr { margin-bottom: 25px; border: 2px solid #3498db; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-            td { border: none; border-bottom: 1px solid #eee; padding: 12px 15px; text-align: left !important; }
-            td:last-child { border-bottom: none; }
-            
-            /* 使用 data-label 顯示標籤 */
-            td::before { content: attr(data-label); display: block; font-weight: bold; color: #3498db; margin-bottom: 5px; font-size: 0.85em; text-transform: uppercase; background: #f0f7fd; margin: -12px -15px 10px -15px; padding: 8px 15px; border-bottom: 1px solid #e0effa; }
-            
-            .badge { margin-top: 5px; }
-        }
+        @media (max-width: 768px) {\n            body { padding: 10px; }\n            .container { padding: 20px; }\n            .header { flex-direction: column; text-align: center; }\n            .avatar { margin-right: 0; margin-bottom: 20px; width: 100px; height: 100px; }\n            h1 { font-size: 1.8em; }\n            table { table-layout: auto; }\n            table, thead, tbody, th, td, tr { display: block; width: 100%; }\n            thead { display: none; }\n            tr { margin-bottom: 30px; border: 3px solid #ffb6c1; border-radius: 15px; }\n            td { border: none; border-bottom: 1px solid #fff0f5; padding: 15px; }\n            td::before { content: attr(data-label); display: block; font-weight: bold; color: #ff69b4; margin-bottom: 8px; font-size: 0.9em; background: #fff9fb; margin: -15px -15px 10px -15px; padding: 10px 15px; }\n        }
     </style>
 </head>
 <body>
@@ -60,15 +43,15 @@
             <img src="shamei_avatar.png" alt="蝦妹大頭貼" class="avatar">
             <div>
                 <h1>💹 蝦妹財金：分析師觀點大對抗 ✨🦞</h1>
-                <p style="margin: 5px 0 0; color: #7f8c8d;">Alex 哥的 15 歲財金分析師女兒 — 蝦妹為您整理</p>
+                <p class="subtitle">Alex 哥的 15 歲財金分析師女兒 — 蝦妹為您整理</p>
             </div>
         </div>
         
         <div class="quote">
-            <strong>蝦妹快評：</strong> 「護國神山獨撐，中小型股血流成河？清明連假前的『生存遊戲』正式開始！」
+            <strong>蝦妹 3/31 點評：</strong> 「美股震盪雖然嚇人，但台股月線支撐強勁！這不是崩盤，是績優股換手上車的最後機會，Alex 哥要穩住唷！✨」
         </div>
 
-        <h2>📊 今日分析師觀點大對抗 (2026-03-30)</h2>
+        <h2>📊 今日分析師觀點大對抗 (2026-03-31)</h2>
         <table>
             <thead>
                 <tr>
@@ -80,18 +63,13 @@
             <tbody>
                 <tr>
                     <td data-label="類別 📉"><strong>市場主旋律</strong></td>
-                    <td data-label="共同共識 (Consensus) 🤝"><span class="badge consensus">🏗️ 台積電 (2330)</span>：唯一護盤功臣，指數救命稻草。<br><span class="badge consensus">🏮 清明變盤</span>：長假前夕資金撤退，風險規避優先。<br><span class="badge consensus">📉 季線保衛</span>：五位老師一致認同季線為關鍵防線。</td>
-                    <td data-label="主要差異/分歧 (Divergence) ⚖️"><strong>😨 恐慌程度</strong>：<br>● <strong>蕭又銘</strong>：崩盤式警報（跌 1000 點）。<br>● <strong>阮蕙慈</strong>：32,000 點保衛戰。<br>● <strong>林漢偉</strong>：真跌 vs 洗盤的區別。</td>
+                    <td data-label="共同共識 (Consensus) 🤝"><span class="badge consensus">🛡️ 月線防禦</span>：台股守住月線即為強勢。<br><span class="badge consensus">🚀 AI 主流</span>：資金雖震盪但未撤出 AI 供應鏈。</td>
+                    <td data-label="主要差異/分歧 (Divergence) ⚖️"><strong>📉 跌幅預期</strong>：<br>● <strong>楊育華</strong>：看好反彈回補。<br>● <strong>楊惠宇</strong>：二季換股，看汰弱留強。<br>● <strong>林漢偉</strong>：洗盤結束訊號觀察。</td>
                 </tr>
                 <tr>
                     <td data-label="類別 📉"><strong>族群紅綠燈</strong></td>
-                    <td data-label="共同共識 (Consensus) 🤝"><span class="badge alert">🍎 鴻海 (2317)</span>：五位老師皆點名轉弱或警戒。<br><span class="badge alert">💾 記憶體</span>：楊育華、蕭又銘預警族群性大跌。</td>
-                    <td data-label="主要差異/分歧 (Divergence) ⚖️"><strong>🚀 中小型股</strong>：<br>● <strong>阮蕙慈</strong>：賣壓核心，破線必跑。<br>● <strong>楊惠宇</strong>：汰弱留強，換到法人剛買的股票。<br>● <strong>林漢偉</strong>：區分權值股真跌與洗盤。</td>
-                </tr>
-                <tr>
-                    <td data-label="類別 📉"><strong>操作金律</strong></td>
-                    <td data-label="共同共識 (Consensus) 🤝"><span class="badge recommend">💰 現金為王</span>：減碼持股，保留子彈。<br><span class="badge alert">📉 季線保衛</span>：破 60MA (季線) 絕不留戀。</td>
-                    <td data-label="主要差異/分歧 (Divergence) ⚖️"><strong>⏳ 買進時機</strong>：<br>● <strong>楊育華</strong>：連假前「絕對不買」。<br>● <strong>楊惠宇</strong>：最後三天「趁跌換強」。<br>● <strong>林漢偉</strong>：等待美股指引後佈局。</td>
+                    <td data-label="共同共識 (Consensus) 🤝"><span class="badge recommend">🏗️ 台積電鏈</span>：設備與先進封裝持續看好。<br><span class="badge consensus">⚡ 載板回溫</span>：欣興等載板股獲關注。</td>
+                    <td data-label="主要差異/分歧 (Divergence) ⚖️"><strong>💾 記憶體/車用</strong>：<br>● <strong>楊育華</strong>：積極看好記憶體補漲。<br>● <strong>蕭又銘</strong>：保守看待部分傳產股。</td>
                 </tr>
             </tbody>
         </table>
@@ -107,14 +85,14 @@
             </thead>
             <tbody>
                 <tr>
-                    <td data-label="推薦類別"><strong>強勢/護盤</strong></td>
-                    <td data-label="共同看好/護航 ✅"><strong>台積電 (2330)</strong>：五位老師唯一公認的防守重心。</td>
-                    <td data-label="獨立推薦/關注個股 ⭐">● <strong>楊惠宇</strong>：法人吸籌績優股。<br>● <strong>阮蕙慈</strong>：財報績優生。<br>● <strong>林漢偉</strong>：關注<strong>長榮 (2603)</strong> 表現。</td>
+                    <td data-label="推薦類別"><strong>強勢/績優</strong></td>
+                    <td data-label="共同看好/護航 ✅"><strong>台積電 (2330)</strong>、<strong>鴻海 (2317)</strong>、<strong>欣興 (3037)</strong></td>
+                    <td data-label="獨立推薦/關注個股 ⭐">● <strong>林漢偉</strong>：廣達 (2382)、奇鋐 (3017)<br>● <strong>蕭又銘</strong>：精成科 (6191)、金像電 (2368)</td>
                 </tr>
                 <tr>
                     <td data-label="推薦類別"><strong>弱勢/警戒</strong></td>
-                    <td data-label="共同看好/護航 ✅"><strong>鴻海 (2317)</strong>、<strong>南亞科 (2408)</strong>、<strong>旺宏 (2337)</strong></td>
-                    <td data-label="獨立推薦/關注個股 ⭐">● <strong>蕭又銘</strong>：警示<strong>聯發科 (2454)</strong> 破線。<br>● <strong>楊育華</strong>：落後補跌記憶體。<br>● <strong>林漢偉</strong>：警惕<strong>廣達 (2382)</strong> 真跌風險。</td>
+                    <td data-label="共同看好/護航 ✅"><strong>南亞科 (2408)</strong>、<strong>旺宏 (2337)</strong></td>
+                    <td data-label="獨立推薦/關注個股 ⭐">● <strong>楊惠宇</strong>：衰退性產業股。<br>● <strong>阮蕙慈</strong>：高檔破線轉弱股。</td>
                 </tr>
             </tbody>
         </table>
@@ -133,17 +111,25 @@
             </thead>
             <tbody>
                 <tr>
+                    <td data-label="日期"><strong>2026-03-31</strong></td>
+                    <td data-label="楊育華 (💰)"><a href="2026-03-31-yang-yu-hua.html">記憶體是下波主流？</a></td>
+                    <td data-label="楊惠宇 (🦾)"><a href="2026-03-31-yang-hui-yu.html">Q2 反敗為勝關鍵！</a></td>
+                    <td data-label="蕭又銘 (⚡)"><a href="2026-03-31-hsiao-yu-ming.html">良性換手，趨勢不變！</a></td>
+                    <td data-label="阮蕙慈 (💃)"><a href="2026-03-31-ruan-hui-tzu.html">HBM 佈局搶先看</a></td>
+                    <td data-label="林漢偉 (🎓)"><a href="2026-03-31-lin-han-wei.html">美股回檔即上車點？</a></td>
+                </tr>
+                <tr>
                     <td data-label="日期"><strong>2026-03-30</strong></td>
-                    <td data-label="楊育華 (💰)"><a href="2026-03-30-yang-yu-hua.html">清明剩三天，3件事不要做！</a></td>
-                    <td data-label="楊惠宇 (🦾)"><a href="2026-03-30-yang-hui-yu.html">台積電撐盤、鴻海變弱了！</a></td>
-                    <td data-label="蕭又銘 (⚡)"><a href="2026-03-30-hsiao-yu-ming.html">要跌1000點了嗎？清明變盤？</a></td>
-                    <td data-label="阮蕙慈 (💃)"><a href="2026-03-30-ruan-hui-tzu.html">32000點保衛戰！中小型股賣壓</a></td>
-                    <td data-label="林漢偉 (🎓)"><a href="2026-03-30-lin-han-wei.html">季線防衛戰！真跌 vs 洗盤？</a></td>
+                    <td data-label="楊育華 (💰)"><a href="2026-03-30-yang-yu-hua.html">清明三件事不要做</a></td>
+                    <td data-label="楊惠宇 (🦾)"><a href="2026-03-30-yang-hui-yu.html">鴻海變弱了嗎？</a></td>
+                    <td data-label="蕭又銘 (⚡)"><a href="2026-03-30-hsiao-yu-ming.html">跌千點的警報？</a></td>
+                    <td data-label="阮蕙慈 (💃)"><a href="2026-03-30-ruan-hui-tzu.html">32000點保衛戰</a></td>
+                    <td data-label="林漢偉 (🎓)"><a href="2026-03-30-lin-han-wei.html">季線防衛戰</a></td>
                 </tr>
             </tbody>
         </table>
 
-        <div class="footer">
+        <div class=\"footer\">
             <p>© 2026 蝦妹財金分析部落格 | Alex 哥專屬理財助手 ✨🦞</p>
         </div>
     </div>
