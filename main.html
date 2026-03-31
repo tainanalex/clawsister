@@ -34,7 +34,6 @@
             border: 2px solid var(--soft-pink); 
         }
 
-        /* Header Responsive */
         .header { 
             display: flex; 
             flex-direction: column;
@@ -72,56 +71,35 @@
 
         h2 { border-left: 8px solid var(--primary-pink); padding-left: 12px; color: var(--dark-pink); margin-top: 30px; font-size: 1.3em; }
 
-        /* Table Responsive Strategy: Card Layout on Mobile */
+        /* Table Design */
         table { width: 100%; border-collapse: collapse; margin-bottom: 30px; background: white; table-layout: fixed; }
-        
-        thead { display: none; } /* Hide headers on mobile */
-        
-        tr { 
-            display: block; 
-            margin-bottom: 20px; 
-            border: 2px solid var(--soft-pink); 
-            border-radius: 15px; 
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
+        th, td { padding: 12px; text-align: left; border: 1px solid #ffe4e1; word-wrap: break-word; font-size: 0.9em; }
+        th { background-color: var(--soft-pink); color: white; }
+        tr:nth-child(even) { background-color: #fffafb; }
 
-        td { 
-            display: block; 
-            padding: 12px 15px; 
-            border: none; 
-            border-bottom: 1px solid #fff0f5; 
-            text-align: left !important;
-            position: relative;
-        }
-
-        td:last-child { border-bottom: none; }
-
-        /* Label injection for mobile */
-        td::before { 
-            content: attr(data-label); 
-            display: block; 
-            font-weight: bold; 
-            color: var(--primary-pink); 
-            margin-bottom: 5px; 
-            font-size: 0.85em; 
-            background: #fff9fb; 
-            margin: -12px -15px 10px -15px; 
-            padding: 8px 15px; 
-            border-bottom: 1px solid #ffe4e1;
-        }
-
-        .badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 0.9em; font-weight: bold; margin-bottom: 5px; }
+        .badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 0.85em; font-weight: bold; margin-bottom: 5px; }
         .consensus { background-color: #e6fffa; color: #006d5b; border: 1px solid #b2f5ea; }
         .divergence { background-color: #fffaf0; color: #9c4221; border: 1px solid #feebc8; }
         .recommend { background-color: #ebf8ff; color: #2a4365; border: 1px solid #bee3f8; }
         .alert { background-color: #fff5f5; color: #c53030; border: 1px solid #fed7d7; }
 
         a { color: var(--primary-pink); text-decoration: none; font-weight: bold; }
+        a:hover { color: var(--dark-pink); text-decoration: underline; }
 
         .footer { text-align: center; margin-top: 40px; color: var(--dark-pink); font-size: 0.9em; }
 
-        /* Desktop Layout Overrides */
+        /* Mobile Layout */
+        @media (max-width: 768px) {
+            .container { padding: 10px; }
+            h1 { font-size: 1.4em; }
+            table, thead, tbody, th, td, tr { display: block; width: 100%; }
+            thead { display: none; }
+            tr { margin-bottom: 25px; border: 2px solid var(--soft-pink); border-radius: 15px; overflow: hidden; }
+            td { border: none; border-bottom: 1px solid #fff0f5; padding: 12px; position: relative; }
+            td::before { content: attr(data-label); display: block; font-weight: bold; color: var(--primary-pink); margin-bottom: 5px; font-size: 0.8em; background: #fff9fb; margin: -12px -12px 8px -12px; padding: 8px 12px; border-bottom: 1px solid #ffe4e1; }
+        }
+
+        /* Desktop specific */
         @media (min-width: 768px) {
             body { padding: 20px; }
             .container { padding: 30px; }
@@ -129,14 +107,11 @@
             .avatar { margin-bottom: 0; margin-right: 30px; width: 120px; height: 120px; }
             h1 { font-size: 2.2em; }
             .subtitle { font-size: 1.1em; }
-            
             thead { display: table-header-group; }
-            table { table-layout: auto; display: table; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-            tr { display: table-row; margin-bottom: 0; border: none; border-radius: 0; box-shadow: none; }
-            td { display: table-cell; border: 1px solid #ffe4e1; padding: 18px; }
+            table { display: table; table-layout: auto; border-radius: 15px; overflow: hidden; }
+            tr { display: table-row; }
+            td, th { display: table-cell; padding: 15px; }
             td::before { display: none; }
-            tr:nth-child(even) { background-color: #fffafb; }
-            th { background-color: var(--soft-pink); color: white; padding: 15px; }
         }
     </style>
 </head>
@@ -208,33 +183,33 @@
         </table>
 
         <h2>📅 分析師每日摘要索引 (Index)</h2>
-        <table id="index-table">
+        <table style="width: 100%; table-layout: auto;">
             <thead>
                 <tr>
-                    <th style="width: 15%;">日期 \ 分析師</th>
-                    <th>分析師連結彙整 💹</th>
+                    <th style="width: 10%;">日期</th>
+                    <th>楊育華 (💰)</th>
+                    <th>楊惠宇 (🦾)</th>
+                    <th>蕭又銘 (⚡)</th>
+                    <th>阮蕙慈 (💃)</th>
+                    <th>林漢偉 (🎓)</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td data-label="日期"><strong>2026-03-31</strong></td>
-                    <td data-label="分析師連結彙整 💹">
-                        <a href="2026-03-31-yang-yu-hua.html">楊育華 (💰)</a> | 
-                        <a href="2026-03-31-yang-hui-yu.html">楊惠宇 (🦾)</a> | 
-                        <a href="2026-03-31-hsiao-yu-ming.html">蕭又銘 (⚡)</a> | 
-                        <a href="2026-03-31-ruan-hui-tzu.html">阮蕙慈 (💃)</a> | 
-                        <a href="2026-03-31-lin-han-wei.html">林漢偉 (🎓)</a>
-                    </td>
+                    <td data-label="楊育華 (💰)"><a href="2026-03-31-yang-yu-hua.html">記憶體與老 AI 的進擊路徑</a></td>
+                    <td data-label="楊惠宇 (🦾)"><a href="2026-03-31-yang-hui-yu.html">Q2 反敗為勝，策略在於「精」</a></td>
+                    <td data-label="蕭又銘 (⚡)"><a href="2026-03-31-hsiao-yu-ming.html">趨勢領航，精成科逆勢突圍</a></td>
+                    <td data-label="阮蕙慈 (💃)"><a href="2026-03-31-ruan-hui-tzu.html">金融阮實力，HBM 的長線佈局</a></td>
+                    <td data-label="林漢偉 (🎓)"><a href="2026-03-31-lin-han-wei.html">主流不動搖，AI 基礎建設與散熱</a></td>
                 </tr>
                 <tr>
                     <td data-label="日期"><strong>2026-03-30</strong></td>
-                    <td data-label="分析師連結彙整 💹">
-                        <a href="2026-03-30-yang-yu-hua.html">楊育華 (💰)</a> | 
-                        <a href="2026-03-30-yang-hui-yu.html">楊惠宇 (🦾)</a> | 
-                        <a href="2026-03-30-hsiao-yu-ming.html">蕭又銘 (⚡)</a> | 
-                        <a href="2026-03-30-ruan-hui-tzu.html">阮蕙慈 (💃)</a> | 
-                        <a href="2026-03-30-lin-han-wei.html">林漢偉 (🎓)</a>
-                    </td>
+                    <td data-label="楊育華 (💰)"><a href="2026-03-30-yang-yu-hua.html">清明剩三天，3件事不要做！</a></td>
+                    <td data-label="楊惠宇 (🦾)"><a href="2026-03-30-yang-hui-yu.html">台積電撐盤、鴻海變弱了！</a></td>
+                    <td data-label="蕭又銘 (⚡)"><a href="2026-03-30-hsiao-yu-ming.html">要跌1000點了嗎？清明變盤？</a></td>
+                    <td data-label="阮蕙慈 (💃)"><a href="2026-03-30-ruan-hui-tzu.html">32000點保衛戰！中小型股賣壓</a></td>
+                    <td data-label="林漢偉 (🎓)"><a href="2026-03-30-lin-han-wei.html">季線防衛戰！真跌 vs 洗盤？</a></td>
                 </tr>
             </tbody>
         </table>
