@@ -2,22 +2,34 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>蝦妹財金｜登入</title>
   <style>
     :root{--pink:#ff69b4;--pink2:#ffb6c1;--bg:#fff0f5;--dark:#d94a93}
+    *{box-sizing:border-box}
     body{margin:0;font-family:'Segoe UI','Microsoft JhengHei',sans-serif;background:linear-gradient(180deg,#fff0f5,#ffe4ee);color:#333;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
-    .card{width:100%;max-width:460px;background:#fff;border:2px solid var(--pink2);border-radius:24px;padding:28px;box-shadow:0 14px 30px rgba(255,105,180,.18);text-align:center}
+    .card{width:min(100%,460px);background:#fff;border:2px solid var(--pink2);border-radius:24px;padding:28px;box-shadow:0 14px 30px rgba(255,105,180,.18);text-align:center}
     .avatar{width:110px;height:110px;border-radius:50%;object-fit:cover;border:4px solid var(--pink);margin-bottom:16px}
     h1{margin:0;color:var(--dark);font-size:1.8rem}
     .subtitle{margin:8px 0 22px;color:#c95d93;font-weight:700}
     .hint{background:#fff7fa;border-left:5px solid var(--pink);padding:12px 14px;border-radius:12px;text-align:left;margin-bottom:18px}
-    input{width:100%;box-sizing:border-box;padding:14px 16px;border:2px solid #ffd1e6;border-radius:14px;font-size:1rem;outline:none}
+    input{width:100%;padding:14px 16px;border:2px solid #ffd1e6;border-radius:14px;font-size:16px;outline:none}
     input:focus{border-color:var(--pink);box-shadow:0 0 0 4px rgba(255,105,180,.12)}
-    button{margin-top:14px;width:100%;padding:14px 16px;border:0;border-radius:999px;background:var(--pink);color:#fff;font-size:1rem;font-weight:700;cursor:pointer}
+    button{margin-top:14px;width:100%;padding:14px 16px;border:0;border-radius:999px;background:var(--pink);color:#fff;font-size:16px;font-weight:700;cursor:pointer}
     button:hover{opacity:.92}
     .error{margin-top:12px;color:#d62865;font-weight:700;min-height:24px}
     .footer{margin-top:16px;color:#b36a91;font-size:.92rem}
+    @media (max-width:768px){
+      body{padding:14px}
+      .card{padding:22px;border-radius:20px}
+      .avatar{width:92px;height:92px}
+      h1{font-size:1.5rem}
+      .subtitle{font-size:.95rem}
+      .hint{font-size:.95rem}
+    }
+    @media (min-width:1000px){
+      .card{padding:34px}
+    }
   </style>
 </head>
 <body>
@@ -25,33 +37,22 @@
     <img src="shamei_avatar.png" alt="蝦妹大頭貼" class="avatar">
     <h1>💹 蝦妹財金</h1>
     <div class="subtitle">Alex 哥專屬入口</div>
-
-    <div class="hint">
-      請輸入密碼後進入 4/2 最新版分析頁。
-    </div>
-
+    <div class="hint">請輸入密碼後進入 4/2 最新版分析頁。</div>
     <form id="loginForm">
       <input id="password" type="password" placeholder="請輸入密碼" autocomplete="current-password" />
       <button type="submit">進入網站</button>
       <div id="error" class="error"></div>
     </form>
-
     <div class="footer">蝦妹會幫你守好入口 ✨🦞</div>
   </div>
-
   <script>
     const PASSWORD = 'LiLi2516169';
     const AUTH_KEY = 'shamei_auth';
-
-    if (sessionStorage.getItem(AUTH_KEY) === 'true') {
-      window.location.href = 'main.html';
-    }
-
+    if (sessionStorage.getItem(AUTH_KEY) === 'true') window.location.href = 'main.html';
     document.getElementById('loginForm').addEventListener('submit', function (e) {
       e.preventDefault();
       const input = document.getElementById('password').value;
       const error = document.getElementById('error');
-
       if (input === PASSWORD) {
         sessionStorage.setItem(AUTH_KEY, 'true');
         window.location.href = 'main.html';
