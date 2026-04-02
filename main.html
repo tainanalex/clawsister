@@ -6,15 +6,18 @@
   <title>蝦妹財金 - 2026-04-02 分析師比較</title>
   <style>
     :root{--pink:#ff69b4;--pink2:#ffb6c1;--dark:#d94a93;--bg:#fff0f5;--card:#ffffff}
-    body{font-family:'Segoe UI','Microsoft JhengHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:24px;line-height:1.7}
-    .container{max-width:1200px;margin:0 auto;background:var(--card);border:2px solid var(--pink2);border-radius:24px;padding:28px;box-shadow:0 10px 24px rgba(255,105,180,.15)}
+    *{box-sizing:border-box}
+    body{font-family:'Segoe UI','Microsoft JhengHei',sans-serif;background:var(--bg);color:#333;margin:0;padding:24px;line-height:1.75}
+    .container{max-width:1240px;margin:0 auto;background:var(--card);border:2px solid var(--pink2);border-radius:24px;padding:28px;box-shadow:0 10px 24px rgba(255,105,180,.15)}
     .header{display:flex;gap:20px;align-items:center;flex-wrap:wrap;border-bottom:4px solid var(--pink);padding-bottom:18px;margin-bottom:22px}
     .avatar{width:110px;height:110px;border-radius:50%;object-fit:cover;border:4px solid var(--pink)}
     h1{margin:0;color:var(--dark)}
     .subtitle{margin-top:6px;color:var(--pink);font-weight:700}
     .quote{background:#fff9fb;border-left:6px solid var(--pink);padding:16px;border-radius:12px;margin:20px 0}
+    .summary{background:#fff7fb;border:1px solid #ffd7ea;border-radius:16px;padding:18px;margin:18px 0 26px}
     h2{color:var(--dark);border-left:8px solid var(--pink);padding-left:12px;margin-top:30px}
-    table{width:100%;border-collapse:collapse;margin:18px 0 28px;background:#fff}
+    .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:18px 0 28px}
+    table{width:100%;border-collapse:collapse;background:#fff;min-width:860px}
     th,td{border:1px solid #ffe4e1;padding:12px;vertical-align:top}
     th{background:var(--pink2);color:#fff}
     tr:nth-child(even){background:#fffafb}
@@ -26,7 +29,9 @@
     .recommend{background:#ebf8ff;color:#2a4365;border:1px solid #bee3f8}
     .warning{background:#fff5f5;color:#c53030;border:1px solid #fed7d7}
     .footer{text-align:center;margin-top:36px;color:var(--dark)}
-    @media (max-width:768px){body{padding:12px}.container{padding:16px}.avatar{width:88px;height:88px}table,thead,tbody,tr,th,td{display:block;width:100%}thead{display:none}tr{margin-bottom:18px;border:2px solid #ffd7ea;border-radius:14px;overflow:hidden}td{position:relative;padding:12px}td::before{content:attr(data-label);display:block;font-weight:700;color:var(--pink);margin-bottom:6px}}
+    ul{margin:0;padding-left:20px}
+    li+li{margin-top:8px}
+    @media (max-width:768px){body{padding:12px}.container{padding:16px}.avatar{width:88px;height:88px}table{min-width:720px}}
   </style>
 </head>
 <body>
@@ -47,157 +52,238 @@
 
     <div class="quote">
       <strong>蝦妹 4/2 點評：</strong>
-      今天最值得看的不是單一老師講什麼，而是五位分析師裡，哪些地方講得一致、哪些地方開始分歧。把共同觀點和分歧觀點拆開來，才比較不會被單一立場帶著跑。💹
+      今天這版我特別把五位分析師的影片內容拆成「共同觀點」跟「分歧觀點」來看，這樣 Alex 哥就不會只被單一老師帶著走。真正有價值的地方不是誰講得最大聲，而是哪些地方大家都同意、哪些地方開始分岐，這才是盤勢最值得注意的訊號。💹
+    </div>
+
+    <div class="summary">
+      <strong>📌 今日快速結論</strong>
+      <ul>
+        <li>五位分析師對大盤短線情緒回暖這件事，大致上有共識。</li>
+        <li>最大分歧在於：這波上漲是新一波攻勢，還是連假前的反彈與逃命波。</li>
+        <li>主流仍集中在 AI 供應鏈、台積電鏈、先進封裝、設備、載板與 HBM。</li>
+        <li>共同推薦以 <strong>台積電、聯茂、致茂</strong> 為核心；個別特色股則分散在 <strong>大量、華通、廣達、精成科、奇鋐、欣興</strong>。</li>
+      </ul>
     </div>
 
     <h2>📊 今日分析師觀點大對抗</h2>
-    <table>
-      <thead>
-        <tr>
-          <th style="width:22%;">比較項目</th>
-          <th style="width:39%;">共同觀點</th>
-          <th style="width:39%;">分歧觀點</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-label="比較項目"><strong>大盤方向</strong></td>
-          <td data-label="共同觀點">
-            <span class="badge consensus">共同看法</span><br>
-            五位分析師都認為，經過大漲之後，市場情緒明顯回暖，短線重點從恐慌轉向觀察反彈是否延續。
-          </td>
-          <td data-label="分歧觀點">
-            <span class="badge divergence">分歧焦點</span><br>
-            ● <strong>楊育華</strong>：偏保守，提醒清明連假前要先防震盪。<br>
-            ● <strong>楊惠宇</strong>：最樂觀，認為回檔就是買點。<br>
-            ● <strong>林漢偉</strong>：中性偏觀察，認為量能是否延續才是關鍵。
-          </td>
-        </tr>
-        <tr>
-          <td data-label="比較項目"><strong>操作策略</strong></td>
-          <td data-label="共同觀點">
-            <span class="badge consensus">共同看法</span><br>
-            大家都不建議亂追高，仍然要挑主流、挑有基本面與題材支撐的股票。
-          </td>
-          <td data-label="分歧觀點">
-            <span class="badge divergence">分歧焦點</span><br>
-            ● <strong>楊育華</strong>：主張先汰弱留強、控制風險。<br>
-            ● <strong>蕭又銘</strong>：偏趨勢操作，等回測確認再進。<br>
-            ● <strong>楊惠宇</strong>：較積極，偏向直接布局 AI 強勢股。
-          </td>
-        </tr>
-        <tr>
-          <td data-label="比較項目"><strong>主流族群</strong></td>
-          <td data-label="共同觀點">
-            <span class="badge consensus">共同看法</span><br>
-            AI 供應鏈、台積電鏈、設備、先進封裝、載板，都是今天五位老師共同反覆提到的主流方向。
-          </td>
-          <td data-label="分歧觀點">
-            <span class="badge divergence">分歧焦點</span><br>
-            ● <strong>阮蕙慈</strong>：額外強調低軌衛星與 HBM。<br>
-            ● <strong>楊育華</strong>：比較重視記憶體補漲。<br>
-            ● <strong>蕭又銘</strong>：對非主流與追價型個股相對保守。
-          </td>
-        </tr>
-        <tr>
-          <td data-label="比較項目"><strong>風險提醒</strong></td>
-          <td data-label="共同觀點">
-            <span class="badge warning">共同提醒</span><br>
-            大漲後不能只看氣氛，連假、量能與追高風險都還是要注意。
-          </td>
-          <td data-label="分歧觀點">
-            <span class="badge divergence">分歧焦點</span><br>
-            ● <strong>楊育華</strong>：風險提醒最重。<br>
-            ● <strong>林漢偉</strong>：強調量價結構與後續成交量。<br>
-            ● <strong>楊惠宇</strong>：對風險相對淡化，認為整理仍屬機會。
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:20%;">比較項目</th>
+            <th style="width:40%;">共同觀點</th>
+            <th style="width:40%;">分歧觀點</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>大盤方向</strong></td>
+            <td>
+              <span class="badge consensus">共同看法</span><br>
+              五位分析師都承認，經過前一波急跌後，今天市場情緒明顯修復，短線資金重新回到主流股，盤面焦點重新聚集在 AI 與大型電子權值股。
+            </td>
+            <td>
+              <span class="badge divergence">分歧焦點</span><br>
+              ● <strong>楊育華</strong>：最保守，認為這更像反彈甚至可能是誘多，連假前不宜大意。<br>
+              ● <strong>楊惠宇</strong>：最樂觀，認為回檔就是買點。<br>
+              ● <strong>林漢偉</strong>：偏中性，認為後續是否放量才決定這波是真轉強還是一日行情。
+            </td>
+          </tr>
+          <tr>
+            <td><strong>操作策略</strong></td>
+            <td>
+              <span class="badge consensus">共同看法</span><br>
+              大家都不建議盲目追高。即使看多，也要挑主流、挑族群、挑業績與題材兼具的股票，不是所有股票都能跟著一起漲。
+            </td>
+            <td>
+              <span class="badge divergence">分歧焦點</span><br>
+              ● <strong>楊育華</strong>：強調汰弱留強、保留現金。<br>
+              ● <strong>蕭又銘</strong>：偏趨勢型，等回測或型態確認後再進。<br>
+              ● <strong>楊惠宇</strong>：積極派，認為強勢 AI 供應鏈可逢強操作。
+            </td>
+          </tr>
+          <tr>
+            <td><strong>主流族群</strong></td>
+            <td>
+              <span class="badge consensus">共同看法</span><br>
+              AI 供應鏈、台積電鏈、先進封裝、設備、載板是五位老師最有共識的方向。今天的討論核心不在金融、航運或傳產，而是高階電子與 AI 基建。
+            </td>
+            <td>
+              <span class="badge divergence">分歧焦點</span><br>
+              ● <strong>阮蕙慈</strong> 額外加重低軌衛星、華通、HBM 散熱鏈。<br>
+              ● <strong>楊育華</strong> 額外注意記憶體補漲與風險。<br>
+              ● <strong>蕭又銘</strong> 對傳產與非主流族群相對保守。
+            </td>
+          </tr>
+          <tr>
+            <td><strong>風險提醒</strong></td>
+            <td>
+              <span class="badge warning">共同提醒</span><br>
+              大家都提醒：大漲之後不能只看氣氛，清明連假、量能不足、追高風險，仍然是這兩天最重要的不確定因素。
+            </td>
+            <td>
+              <span class="badge divergence">分歧焦點</span><br>
+              ● <strong>楊育華</strong>：最強烈提醒風險，甚至談到大幅回檔可能。<br>
+              ● <strong>林漢偉</strong>：重點看成交量與量價結構。<br>
+              ● <strong>楊惠宇</strong>：相對淡化風險，把整理視為再次進場機會。
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <h2>🎯 共同推薦 / 單獨推薦股票</h2>
-    <table>
-      <thead>
-        <tr>
-          <th style="width:22%;">類別</th>
-          <th style="width:39%;">共同推薦 / 共同關注</th>
-          <th style="width:39%;">單獨推薦 / 個別特色股</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-label="類別"><strong>主流強勢股</strong></td>
-          <td data-label="共同推薦 / 共同關注">
-            <span class="badge recommend">共同關注</span><br>
-            <strong>台積電 (2330)</strong>、<strong>聯茂 (6213)</strong>、<strong>致茂 (2360)</strong>
-          </td>
-          <td data-label="單獨推薦 / 個別特色股">
-            ● <strong>楊惠宇</strong>：<strong>大量 (3167)</strong> 漲停強勢股<br>
-            ● <strong>阮蕙慈</strong>：<strong>華通 (2313)</strong> 太空板王<br>
-            ● <strong>林漢偉</strong>：<strong>廣達 (2382)</strong> 法人回補指標<br>
-            ● <strong>蕭又銘</strong>：<strong>精成科 (6191)</strong> 趨勢股
-          </td>
-        </tr>
-        <tr>
-          <td data-label="類別"><strong>延伸題材股</strong></td>
-          <td data-label="共同推薦 / 共同關注">
-            <span class="badge recommend">共同關注</span><br>
-            <strong>欣興 (3037)</strong>、<strong>奇鋐 (3017)</strong> 等載板 / 散熱 / HBM 概念股持續被點名。
-          </td>
-          <td data-label="單獨推薦 / 個別特色股">
-            ● <strong>阮蕙慈</strong>：奇鋐 (3017)<br>
-            ● <strong>林漢偉</strong>：欣興 (3037)
-          </td>
-        </tr>
-        <tr>
-          <td data-label="類別"><strong>警戒 / 觀察股</strong></td>
-          <td data-label="共同推薦 / 共同關注">
-            <span class="badge warning">共同提醒</span><br>
-            <strong>南亞科 (2408)</strong>、<strong>旺宏 (2337)</strong> 這類記憶體股雖有補漲題材，但也伴隨高波動與支撐壓力。
-          </td>
-          <td data-label="單獨推薦 / 個別特色股">
-            ● <strong>楊育華</strong>：特別提醒記憶體股要守關鍵支撐。<br>
-            ● <strong>楊惠宇</strong>：衰退性產業股不宜追。<br>
-            ● <strong>阮蕙慈</strong>：高檔破線轉弱股要避開。
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:20%;">類別</th>
+            <th style="width:40%;">共同推薦 / 共同關注</th>
+            <th style="width:40%;">單獨推薦 / 個別特色股</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>核心主流股</strong></td>
+            <td>
+              <span class="badge recommend">共同關注</span><br>
+              <strong>台積電 (2330)</strong>、<strong>聯茂 (6213)</strong>、<strong>致茂 (2360)</strong><br>
+              這三檔最能代表今天五位分析師眼中的主流方向：權值、AI 材料 / 設備、以及高階供應鏈延伸受惠。
+            </td>
+            <td>
+              ● <strong>楊惠宇</strong>：<strong>大量 (3167)</strong>，強勢漲停，代表資金敢追。<br>
+              ● <strong>阮蕙慈</strong>：<strong>華通 (2313)</strong>，低軌衛星題材核心。<br>
+              ● <strong>林漢偉</strong>：<strong>廣達 (2382)</strong>，AI 伺服器核心指標。<br>
+              ● <strong>蕭又銘</strong>：<strong>精成科 (6191)</strong>，偏趨勢型個股。
+            </td>
+          </tr>
+          <tr>
+            <td><strong>延伸題材股</strong></td>
+            <td>
+              <span class="badge recommend">共同關注</span><br>
+              <strong>欣興 (3037)</strong>、<strong>奇鋐 (3017)</strong> 等載板 / 散熱 / HBM 概念股，持續被視為主流擴散方向。
+            </td>
+            <td>
+              ● <strong>阮蕙慈</strong>：奇鋐 (3017)，強調散熱與 HBM 基建。<br>
+              ● <strong>林漢偉</strong>：欣興 (3037)，看好載板回溫。<br>
+              ● <strong>楊惠宇</strong>：更強調設備與材料鏈的業績想像空間。
+            </td>
+          </tr>
+          <tr>
+            <td><strong>警戒 / 觀察股</strong></td>
+            <td>
+              <span class="badge warning">共同提醒</span><br>
+              <strong>南亞科 (2408)</strong>、<strong>旺宏 (2337)</strong> 等記憶體股雖有補漲題材，但波動大、技術面壓力也大，不適合只靠情緒追價。
+            </td>
+            <td>
+              ● <strong>楊育華</strong>：特別提醒記憶體股要守支撐。<br>
+              ● <strong>楊惠宇</strong>：提醒衰退型產業不宜亂追。<br>
+              ● <strong>阮蕙慈</strong>：高檔破線轉弱股要避開。
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>📝 今日五位分析師影片重點摘要</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:16%;">分析師</th>
+            <th style="width:28%;">影片主軸</th>
+            <th style="width:28%;">重點觀點</th>
+            <th style="width:28%;">代表個股 / 題材</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>楊育華</strong></td>
+            <td>清明前最後風險控管</td>
+            <td>強調這波急彈之後要防假突破，操作先求守、不要被反彈情緒沖昏頭。</td>
+            <td>南亞科、華邦電、鴻海、記憶體族群</td>
+          </tr>
+          <tr>
+            <td><strong>楊惠宇</strong></td>
+            <td>愚人節大反攻與強勢股續攻</td>
+            <td>看多情緒最強，認為 AI 材料、設備與漲停股仍有延續空間。</td>
+            <td>聯茂、致茂、大量</td>
+          </tr>
+          <tr>
+            <td><strong>蕭又銘</strong></td>
+            <td>趨勢操作與追價節奏</td>
+            <td>不否認轉強可能，但更強調確認與節奏，不鼓勵高檔亂追。</td>
+            <td>精成科、台積電</td>
+          </tr>
+          <tr>
+            <td><strong>阮蕙慈</strong></td>
+            <td>低軌衛星與 HBM 長線劇本</td>
+            <td>從產業趨勢出發，看好太空板、散熱與長線成長題材。</td>
+            <td>華通、奇鋐</td>
+          </tr>
+          <tr>
+            <td><strong>林漢偉</strong></td>
+            <td>量能決定反彈真偽</td>
+            <td>重點在量，若量能不足，大漲後仍可能回測；若放量則有機會延續。</td>
+            <td>廣達、欣興</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <h2>🎬 五位分析師今日影片索引</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>日期</th>
-          <th>楊育華 (💰)</th>
-          <th>楊惠宇 (🦾)</th>
-          <th>蕭又銘 (⚡)</th>
-          <th>阮蕙慈 (💃)</th>
-          <th>林漢偉 (🎓)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-label="日期"><strong>2026-04-02</strong></td>
-          <td data-label="楊育華"><a href="2026-04-02-yang-yu-hua.html">剩一天可以賣？清明後崩4000點真相</a></td>
-          <td data-label="楊惠宇"><a href="2026-04-02-yang-hui-yu.html">愚人節大反攻！三支漲停股的秘密</a></td>
-          <td data-label="蕭又銘"><a href="2026-04-02-hsiao-yu-ming.html">台股噴千點是真的嗎？趨勢操作策略</a></td>
-          <td data-label="阮蕙慈"><a href="2026-04-02-ruan-hui-tzu.html">低軌衛星與 HBM 的長線劇本</a></td>
-          <td data-label="林漢偉"><a href="2026-04-02-lin-han-wei.html">暴漲1400點只是玩笑？決勝關鍵在量</a></td>
-        </tr>
-        <tr>
-          <td data-label="日期"><strong>2026-04-01</strong></td>
-          <td><a href="2026-04-01-yang-yu-hua.html">剩一天可以賣？清明後崩4000點真相</a></td>
-          <td><a href="2026-04-01-yang-hui-yu.html">愚人節大反攻！三支漲停股的秘密</a></td>
-          <td><a href="2026-04-01-hsiao-yu-ming.html">台股噴千點是真的嗎？趨勢操作策略</a></td>
-          <td><a href="2026-04-01-ruan-hui-tzu.html">低軌衛星與 HBM 的長線劇本</a></td>
-          <td><a href="2026-04-01-lin-han-wei.html">暴漲1400點只是玩笑？決勝關鍵在量</a></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>日期</th>
+            <th>楊育華 (💰)</th>
+            <th>楊惠宇 (🦾)</th>
+            <th>蕭又銘 (⚡)</th>
+            <th>阮蕙慈 (💃)</th>
+            <th>林漢偉 (🎓)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>2026-04-02</strong></td>
+            <td><a href="2026-04-02-yang-yu-hua.html">剩一天可以賣？清明後崩4000點的恐懼與貪婪</a></td>
+            <td><a href="2026-04-02-yang-hui-yu.html">愚人節大反攻！三支漲停股的秘密</a></td>
+            <td><a href="2026-04-02-hsiao-yu-ming.html">台股噴千點是真的嗎？趨勢操作策略</a></td>
+            <td><a href="2026-04-02-ruan-hui-tzu.html">低軌衛星與 HBM 的長線劇本</a></td>
+            <td><a href="2026-04-02-lin-han-wei.html">暴漲1400點只是玩笑？決勝關鍵在量</a></td>
+          </tr>
+          <tr>
+            <td><strong>2026-04-01</strong></td>
+            <td><a href="2026-04-01-yang-yu-hua.html">剩一天可以賣？清明後崩4000點真相</a></td>
+            <td><a href="2026-04-01-yang-hui-yu.html">愚人節大反攻！三支漲停股的秘密</a></td>
+            <td><a href="2026-04-01-hsiao-yu-ming.html">台股噴千點是真的嗎？趨勢操作策略</a></td>
+            <td><a href="2026-04-01-ruan-hui-tzu.html">低軌衛星與 HBM 的長線劇本</a></td>
+            <td><a href="2026-04-01-lin-han-wei.html">暴漲1400點只是玩笑？決勝關鍵在量</a></td>
+          </tr>
+          <tr>
+            <td><strong>2026-03-31</strong></td>
+            <td><a href="2026-03-31-yang-yu-hua.html">記憶體與老 AI 的進擊路徑</a></td>
+            <td><a href="2026-03-31-yang-hui-yu.html">Q2 反敗為勝，策略在於「精」</a></td>
+            <td><a href="2026-03-31-hsiao-yu-ming.html">趨勢領航，精成科逆勢突圍</a></td>
+            <td><a href="2026-03-31-ruan-hui-tzu.html">金融阮實力，HBM 的長線佈局</a></td>
+            <td><a href="2026-03-31-lin-han-wei.html">主流不動搖，AI 基礎建設與散熱</a></td>
+          </tr>
+          <tr>
+            <td><strong>2026-03-30</strong></td>
+            <td><a href="2026-03-30-yang-yu-hua.html">清明剩三天，3件事不要做！</a></td>
+            <td><a href="2026-03-30-yang-hui-yu.html">台積電撐盤、鴻海變弱了！</a></td>
+            <td><a href="2026-03-30-hsiao-yu-ming.html">要跌1000點了嗎？清明變盤？</a></td>
+            <td><a href="2026-03-30-ruan-hui-tzu.html">32000點保衛戰！中小型股賣壓</a></td>
+            <td><a href="2026-03-30-lin-han-wei.html">季線防衛戰！真跌 vs 洗盤？</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <div class="footer">
       <p>© 2026 蝦妹財金分析部落格 | Alex 哥專屬理財助手 ✨🦞</p>
+      <p style="font-size:.92rem;opacity:.8">目前只更新本地 D:\clawsister，尚未上傳 GitHub。</p>
     </div>
   </div>
 </body>
