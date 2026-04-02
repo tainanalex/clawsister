@@ -1,42 +1,284 @@
 
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>蝦妹財金 - 登入</title>
+    <title>蝦妹財金 - 分析師觀點每日彙整</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #fff0f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .login-card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; border: 2px solid #ffb6c1; max-width: 400px; width: 90%; }
-        .avatar { width: 120px; height: 120px; border-radius: 50%; border: 5px solid #ff69b4; margin-bottom: 20px; object-fit: cover; }
-        h2 { color: #db7093; margin-bottom: 25px; }
-        input { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box; font-size: 16px; }
-        button { background-color: #ff69b4; color: white; border: none; padding: 12px 30px; border-radius: 10px; cursor: pointer; font-size: 18px; font-weight: bold; transition: background 0.3s; }
-        button:hover { background-color: #ff1493; }
-        .hint { color: #888; font-size: 0.85em; margin-top: 15px; }
+        :root {
+            --primary-pink: #ff69b4;
+            --soft-pink: #ffb6c1;
+            --dark-pink: #db7093;
+            --bg-pink: #fff0f5;
+            --card-white: #ffffff;
+        }
+
+        body { 
+            font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif; 
+            background-color: var(--bg-pink); 
+            color: #333; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 10px; 
+            display: none; 
+        }
+
+        .container { 
+            max-width: 1200px; 
+            margin: auto; 
+            background: var(--card-white); 
+            padding: 15px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 25px rgba(255,182,193,0.3); 
+            border: 2px solid var(--soft-pink); 
+        }
+
+        .header { 
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center; 
+            margin-bottom: 20px; 
+            border-bottom: 4px solid var(--primary-pink); 
+            padding-bottom: 20px; 
+            text-align: center;
+        }
+
+        .avatar { 
+            width: 100px; 
+            height: 100px; 
+            border-radius: 50%; 
+            border: 4px solid var(--primary-pink); 
+            margin-bottom: 15px; 
+            object-fit: cover; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+        }
+
+        h1 { color: var(--dark-pink); margin: 0; font-size: 1.6em; }
+        .subtitle { margin: 5px 0 0; color: var(--primary-pink); font-weight: bold; font-size: 0.9em; }
+
+        .quote { 
+            background: #fff9fb; 
+            border-left: 6px solid var(--primary-pink); 
+            padding: 15px; 
+            margin-bottom: 25px; 
+            font-style: italic; 
+            border-radius: 10px; 
+            font-size: 1em; 
+            color: #555; 
+        }
+
+        h2 { border-left: 8px solid var(--primary-pink); padding-left: 12px; color: var(--dark-pink); margin-top: 30px; font-size: 1.3em; }
+
+        /* Table Design */
+        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; background: white; table-layout: fixed; }
+        th, td { padding: 12px; text-align: left; border: 1px solid #ffe4e1; word-wrap: break-word; font-size: 0.9em; }
+        th { background-color: var(--soft-pink); color: white; }
+        tr:nth-child(even) { background-color: #fffafb; }
+
+        .badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 0.85em; font-weight: bold; margin-bottom: 5px; }
+        .consensus { background-color: #e6fffa; color: #006d5b; border: 1px solid #b2f5ea; }
+        .divergence { background-color: #fffaf0; color: #9c4221; border: 1px solid #feebc8; }
+        .recommend { background-color: #ebf8ff; color: #2a4365; border: 1px solid #bee3f8; }
+        .alert { background-color: #fff5f5; color: #c53030; border: 1px solid #fed7d7; }
+
+        a { color: var(--primary-pink); text-decoration: none; font-weight: bold; }
+        a:hover { color: var(--dark-pink); text-decoration: underline; }
+
+        .footer { text-align: center; margin-top: 40px; color: var(--dark-pink); font-size: 0.9em; }
+
+        /* Mobile Layout */
+        @media (max-width: 768px) {
+            .container { padding: 10px; }
+            h1 { font-size: 1.4em; }
+            table, thead, tbody, th, td, tr { display: block; width: 100%; }
+            thead { display: none; }
+            tr { margin-bottom: 25px; border: 2px solid var(--soft-pink); border-radius: 15px; overflow: hidden; }
+            td { border: none; border-bottom: 1px solid #fff0f5; padding: 12px; position: relative; }
+            td::before { content: attr(data-label); display: block; font-weight: bold; color: var(--primary-pink); margin-bottom: 5px; font-size: 0.8em; background: #fff9fb; margin: -12px -12px 8px -12px; padding: 8px 12px; border-bottom: 1px solid #ffe4e1; }
+        }
+
+        /* Desktop specific */
+        @media (min-width: 768px) {
+            body { padding: 20px; }
+            .container { padding: 30px; }
+            .header { flex-direction: row; text-align: left; }
+            .avatar { margin-bottom: 0; margin-right: 30px; width: 120px; height: 120px; }
+            h1 { font-size: 2.2em; }
+            .subtitle { font-size: 1.1em; }
+            thead { display: table-header-group; }
+            table { display: table; table-layout: auto; border-radius: 15px; overflow: hidden; }
+            tr { display: table-row; }
+            td, th { display: table-cell; padding: 15px; }
+            td::before { display: none; }
+        }
     </style>
 </head>
 <body>
-    <div class="login-card">
-        <img src="shamei_avatar.png" alt="蝦妹大頭貼" class="avatar">
-        <h2>💹 蝦妹財金分析室 ✨🦞</h2>
-        <p>Alex 哥，請輸入專屬密碼進場：</p>
-        <input type="password" id="password" placeholder="請輸入密碼">
-        <button onclick="login()">登入進場 💃</button>
-        <p class="hint">© 2026 蝦妹財金助理</p>
-    </div>
-
     <script>
-        function login() {
-            const pass = document.getElementById('password').value;
-            // 密碼：LiLi2516169 (Base64: TGlMaTI1MTYxNjk=)
-            if (btoa(pass) === 'TGlMaTI1MTYxNjk=') {
-                sessionStorage.setItem('shamei_auth', 'true');
-                window.location.href = 'main.html';
-            } else {
-                alert('密碼錯誤喔，Alex 哥！再試一次？😉');
-            }
+        if (sessionStorage.getItem('shamei_auth') !== 'true') {
+            window.location.href = 'index.html';
+        } else {
+            document.body.style.display = 'block';
         }
     </script>
+    <div class="container">
+        <div class="header">
+            <img src="shamei_avatar.png" alt="蝦妹大頭貼" class="avatar">
+            <div>
+                <h1>💹 蝦妹財金：分析師觀點大對抗 ✨🦞</h1>
+                <p class="subtitle">Alex 哥的 15 歲財金分析師女兒 — 蝦妹為您整理</p>
+            </div>
+        </div>
+        
+        <div class="quote">
+            <strong>蝦妹 4/1 點評：</strong> 「愚人節大反攻！大盤噴漲 1451 點，這不是開玩笑！雖然美伊衝突緩和，但清明連假在即，大師們觀點出現分歧，這才是最精彩的對抗，Alex 哥趕快看下面的深度對比分析！💹✨」
+        </div>
+
+        <h2>📊 今日分析師觀點大對抗 (2026-04-01)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%;">類別 📉</th>
+                    <th style="width: 40%;">共同共識 (Consensus) 🤝</th>
+                    <th style="width: 40%;">主要差異/分歧 (Divergence) ⚖️</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="日期"><strong>2026-04-01</strong></td>
+                    <td data-label="楊育華 (💰)"><a href="2026-04-01-yang-yu-hua.html">剩一天可以賣？清明後崩4000點真相</a></td>
+                    <td data-label="楊惠宇 (🦾)"><a href="2026-04-01-yang-hui-yu.html">愚人節大反攻！三支漲停股的秘密</a></td>
+                    <td data-label="蕭又銘 (⚡)"><a href="2026-04-01-hsiao-yu-ming.html">台股噴千點是真的嗎？趨勢操作策略</a></td>
+                    <td data-label="阮蕙慈 (💃)"><a href="2026-04-01-ruan-hui-tzu.html">低軌衛星與 HBM 的長線劇本</a></td>
+                    <td data-label="林漢偉 (🎓)"><a href="2026-04-01-lin-han-wei.html">暴漲1400點只是玩笑？決勝關鍵在量</a></td>
+                </tr>
+
+                <tr>
+                    <td data-label="日期"><strong>2026-04-01</strong></td>
+                    <td data-label="楊育華 (💰)"><a href="2026-04-01-yang-yu-hua.html">剩一天可以賣？清明後崩4000點真相</a></td>
+                    <td data-label="楊惠宇 (🦾)"><a href="2026-04-01-yang-hui-yu.html">愚人節大反攻！三支漲停股的秘密</a></td>
+                    <td data-label="蕭又銘 (⚡)"><a href="2026-04-01-hsiao-yu-ming.html">台股噴千點是真的嗎？趨勢操作策略</a></td>
+                    <td data-label="阮蕙慈 (💃)"><a href="2026-04-01-ruan-hui-tzu.html">低軌衛星與 HBM 的長線劇本</a></td>
+                    <td data-label="林漢偉 (🎓)"><a href="2026-04-01-lin-han-wei.html">暴漲1400點只是玩笑？決勝關鍵在量</a></td>
+                </tr>
+
+                <tr>
+                    <td data-label="類別 📉"><strong>市場主旋律 (4/1)</strong></td>
+                    <td data-label="共同共識 (Consensus) 🤝"><span class="badge consensus">🌊 報復性反彈</span>：今日噴千點，收復季線，確立短期底部。<br><span class="badge consensus">🧘 信心回籠</span>：美伊和緩消息主導盤面。</td>
+                    <td data-label="主要差異/分歧 (Divergence) ⚖️"><strong>🎭 清明變盤分歧</strong>：<br>● <strong>楊育華</strong>：極度警示！認為「剩一天可以賣」，防崩盤。<br>● <strong>楊惠宇</strong>：極度樂觀！認為回檔就是買點，挑戰新高。<br>● <strong>林漢偉</strong>：中性觀察，看年後量能是否跟上。</td>
+                </tr>
+                <tr>
+                    <td data-label="類別 📉"><strong>族群紅綠燈</strong></td>
+                    <td data-label="共同共識 (Consensus) 🤝"><span class="badge recommend">🏗️ 台積電鏈</span>：設備與先進封裝持續看好。<br><span class="badge consensus">⚡ 載板回溫</span>：欣興等載板股獲關注。</td>
+                    <td data-label="主要差異/分歧 (Divergence) ⚖️"><strong>💾 記憶體/車用</strong>：<br>● <strong>楊育華</strong>：積極看好記憶體補漲。<br>● <strong>蕭又銘</strong>：保守看待部分傳產股。</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🎯 今日個股推薦/警戒清單 (Stock Picks)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%;">推薦類別</th>
+                    <th style="width: 40%;">共同看好/護航 ✅</th>
+                    <th style="width: 40%;">獨立推薦/關注個股 ⭐</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="日期"><strong>2026-04-01</strong></td>
+                    <td data-label="楊育華 (💰)"><a href="2026-04-01-yang-yu-hua.html">剩一天可以賣？清明後崩4000點真相</a></td>
+                    <td data-label="楊惠宇 (🦾)"><a href="2026-04-01-yang-hui-yu.html">愚人節大反攻！三支漲停股的秘密</a></td>
+                    <td data-label="蕭又銘 (⚡)"><a href="2026-04-01-hsiao-yu-ming.html">台股噴千點是真的嗎？趨勢操作策略</a></td>
+                    <td data-label="阮蕙慈 (💃)"><a href="2026-04-01-ruan-hui-tzu.html">低軌衛星與 HBM 的長線劇本</a></td>
+                    <td data-label="林漢偉 (🎓)"><a href="2026-04-01-lin-han-wei.html">暴漲1400點只是玩笑？決勝關鍵在量</a></td>
+                </tr>
+
+                <tr>
+                    <td data-label="日期"><strong>2026-04-01</strong></td>
+                    <td data-label="楊育華 (💰)"><a href="2026-04-01-yang-yu-hua.html">剩一天可以賣？清明後崩4000點真相</a></td>
+                    <td data-label="楊惠宇 (🦾)"><a href="2026-04-01-yang-hui-yu.html">愚人節大反攻！三支漲停股的秘密</a></td>
+                    <td data-label="蕭又銘 (⚡)"><a href="2026-04-01-hsiao-yu-ming.html">台股噴千點是真的嗎？趨勢操作策略</a></td>
+                    <td data-label="阮蕙慈 (💃)"><a href="2026-04-01-ruan-hui-tzu.html">低軌衛星與 HBM 的長線劇本</a></td>
+                    <td data-label="林漢偉 (🎓)"><a href="2026-04-01-lin-han-wei.html">暴漲1400點只是玩笑？決勝關鍵在量</a></td>
+                </tr>
+
+                <tr>
+                    <td data-label="推薦類別"><strong>強勢/績優 (4/1)</strong></td>
+                    <td data-label="共同看好/護航 ✅"><strong>台積電 (2330)</strong>、<strong>聯茂 (6213)</strong>、<strong>致茂 (2360)</strong></td>
+                    <td data-label="獨立推薦/關注個股 ⭐">● <strong>楊惠宇</strong>：大量 (3167) 漲停板<br>● <strong>阮蕙慈</strong>：華通 (2313) 太空板王<br>● <strong>林漢偉</strong>：廣達 (2382) 法人回補</td>
+                </tr>
+                <tr>
+                    <td data-label="推薦類別"><strong>弱勢/警戒</strong></td>
+                    <td data-label="共同看好/護航 ✅"><strong>南亞科 (2408)</strong>、<strong>旺宏 (2337)</strong></td>
+                    <td data-label="獨立推薦/關注個股 ⭐">● <strong>楊惠宇</strong>：衰退性產業股。<br>● <strong>阮蕙慈</strong>：高檔破線轉弱股。</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>📅 分析師每日摘要索引 (Index)</h2>
+        <table style="width: 100%; table-layout: auto;">
+            <thead>
+                <tr>
+                    <th style="width: 10%;">日期</th>
+                    <th>楊育華 (💰)</th>
+                    <th>楊惠宇 (🦾)</th>
+                    <th>蕭又銘 (⚡)</th>
+                    <th>阮蕙慈 (💃)</th>
+                    <th>林漢偉 (🎓)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="日期"><strong>2026-04-01</strong></td>
+                    <td data-label="楊育華 (💰)"><a href="2026-04-01-yang-yu-hua.html">剩一天可以賣？清明後崩4000點真相</a></td>
+                    <td data-label="楊惠宇 (🦾)"><a href="2026-04-01-yang-hui-yu.html">愚人節大反攻！三支漲停股的秘密</a></td>
+                    <td data-label="蕭又銘 (⚡)"><a href="2026-04-01-hsiao-yu-ming.html">台股噴千點是真的嗎？趨勢操作策略</a></td>
+                    <td data-label="阮蕙慈 (💃)"><a href="2026-04-01-ruan-hui-tzu.html">低軌衛星與 HBM 的長線劇本</a></td>
+                    <td data-label="林漢偉 (🎓)"><a href="2026-04-01-lin-han-wei.html">暴漲1400點只是玩笑？決勝關鍵在量</a></td>
+                </tr>
+
+                <tr>
+                    <td data-label="日期"><strong>2026-04-01</strong></td>
+                    <td data-label="楊育華 (💰)"><a href="2026-04-01-yang-yu-hua.html">剩一天可以賣？清明後崩4000點真相</a></td>
+                    <td data-label="楊惠宇 (🦾)"><a href="2026-04-01-yang-hui-yu.html">愚人節大反攻！三支漲停股的秘密</a></td>
+                    <td data-label="蕭又銘 (⚡)"><a href="2026-04-01-hsiao-yu-ming.html">台股噴千點是真的嗎？趨勢操作策略</a></td>
+                    <td data-label="阮蕙慈 (💃)"><a href="2026-04-01-ruan-hui-tzu.html">低軌衛星與 HBM 的長線劇本</a></td>
+                    <td data-label="林漢偉 (🎓)"><a href="2026-04-01-lin-han-wei.html">暴漲1400點只是玩笑？決勝關鍵在量</a></td>
+                </tr>
+
+                <tr>
+                    <td data-label="日期"><strong>2026-04-01</strong></td>
+                    <td data-label="楊育華 (💰)"><a href="2026-04-01-yang-yu-hua.html">剩一天可以賣？清明後崩4000點真相</a></td>
+                    <td data-label="楊惠宇 (🦾)"><a href="2026-04-01-yang-hui-yu.html">愚人節大反攻！三支漲停股的秘密</a></td>
+                    <td data-label="蕭又銘 (⚡)"><a href="2026-04-01-hsiao-yu-ming.html">台股噴千點是真的嗎？趨勢操作策略</a></td>
+                    <td data-label="阮蕙慈 (💃)"><a href="2026-04-01-ruan-hui-tzu.html">低軌衛星與 HBM 的長線劇本</a></td>
+                    <td data-label="林漢偉 (🎓)"><a href="2026-04-01-lin-han-wei.html">暴漲1400點只是玩笑？決勝關鍵在量</a></td>
+                </tr>
+                <tr>
+                    <td data-label="日期"><strong>2026-03-31</strong></td>
+                    <td data-label="楊育華 (💰)"><a href="2026-03-31-yang-yu-hua.html">記憶體與老 AI 的進擊路徑</a></td>
+                    <td data-label="楊惠宇 (🦾)"><a href="2026-03-31-yang-hui-yu.html">Q2 反敗為勝，策略在於「精」</a></td>
+                    <td data-label="蕭又銘 (⚡)"><a href="2026-03-31-hsiao-yu-ming.html">趨勢領航，精成科逆勢突圍</a></td>
+                    <td data-label="阮蕙慈 (💃)"><a href="2026-03-31-ruan-hui-tzu.html">金融阮實力，HBM 的長線佈局</a></td>
+                    <td data-label="林漢偉 (🎓)"><a href="2026-03-31-lin-han-wei.html">主流不動搖，AI 基礎建設與散熱</a></td>
+                </tr>
+                <tr>
+                    <td data-label="日期"><strong>2026-03-30</strong></td>
+                    <td data-label="楊育華 (💰)"><a href="2026-03-30-yang-yu-hua.html">清明剩三天，3件事不要做！</a></td>
+                    <td data-label="楊惠宇 (🦾)"><a href="2026-03-30-yang-hui-yu.html">台積電撐盤、鴻海變弱了！</a></td>
+                    <td data-label="蕭又銘 (⚡)"><a href="2026-03-30-hsiao-yu-ming.html">要跌1000點了嗎？清明變盤？</a></td>
+                    <td data-label="阮蕙慈 (💃)"><a href="2026-03-30-ruan-hui-tzu.html">32000點保衛戰！中小型股賣壓</a></td>
+                    <td data-label="林漢偉 (🎓)"><a href="2026-03-30-lin-han-wei.html">季線防衛戰！真跌 vs 洗盤？</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="footer">
+            <p>© 2026 蝦妹財金分析部落格 | Alex 哥專屬理財助手 ✨🦞</p>
+        </div>
+    </div>
 </body>
 </html>
