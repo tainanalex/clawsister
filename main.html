@@ -28,6 +28,7 @@
     .divergence{background:#fffaf0;color:#9c4221;border:1px solid #feebc8}
     .recommend{background:#ebf8ff;color:#2a4365;border:1px solid #bee3f8}
     .warning{background:#fff5f5;color:#c53030;border:1px solid #fed7d7}
+    .source-box{background:#fff7fa;border:1px dashed #ff9cc7;border-radius:14px;padding:14px 16px;margin:18px 0}
     .footer{text-align:center;margin-top:36px;color:var(--dark)}
     ul{margin:0;padding-left:20px} li+li{margin-top:8px}
     @media (max-width:768px){body{padding:12px}.container{padding:16px}.avatar{width:88px;height:88px}table{min-width:720px}}
@@ -42,22 +43,31 @@
       <img src="shamei_avatar.png" alt="蝦妹大頭照" class="avatar">
       <div>
         <h1>蝦妹財金：五大分析師今日觀點對照表</h1>
-        <div class="subtitle">2026-04-09｜共識觀點、分歧點、推薦個股清單</div>
+        <div class="subtitle">2026-04-09｜重新校正版：以指定官方來源為準</div>
       </div>
     </div>
 
     <div class="quote">
-      <strong>蝦妹 4/9 點評：</strong>
-      今天台股雖然稍微震盪了一下，但終場還是漲了 99 點喔！櫃買指數 OTC 更是再創新高，這代表內資信心滿滿呀！育華老師說下週主流股呼之欲出，爸比我們要睜大眼睛看好喔！
+      <strong>蝦妹 4/9 重整版：</strong>
+      這次我把 4/9 頁面重新校正了，優先改成你指定的五位分析師官方 YouTube 頻道來源。之後每日最新影片也會先從他們的部落格網站與官方頻道找，不再亂抓外部結果啦。
+    </div>
+
+    <div class="source-box">
+      <strong>📌 這次重整規則</strong>
+      <ul>
+        <li>搜尋工具偏好：之後改用 tavily-search。</li>
+        <li>五大分析師每日最新影片：優先從他們各自的部落格網站找。</li>
+        <li>若部落格需交叉驗證，則以你提供的官方 YouTube 頻道作為校對來源。</li>
+      </ul>
     </div>
 
     <div class="summary">
       <strong>🚀 今日快速導航</strong>
       <ul>
-        <li><strong>最大共識：</strong>多頭格局未變，中小型股接棒演出，AI 供應鏈依然是獲利關鍵。</li>
-        <li><strong>最大分歧：</strong>對於地緣政治的敏感度。部分老師認為利空已鈍化，部分則提醒仍需防範突發消息。</li>
-        <li><strong>今日策略：</strong>鎖定績優中小型股，尤其是 PCB、CPO 與 AI 伺服器零件。</li>
-        <li><strong>今日主戰場：</strong>櫃買市場、AI 伺服器零組件、半導體設備。</li>
+        <li><strong>最大共識：</strong>台股多頭結構未壞，AI 與半導體相關族群仍是市場關注焦點。</li>
+        <li><strong>本次修正重點：</strong>4/9 五位分析師頁面全部改成官方來源導向版本。</li>
+        <li><strong>後續更新策略：</strong>先找部落格，再用官方頻道核對最新影片。</li>
+        <li><strong>目前狀態：</strong>4/9 網頁已完成重新更新。</li>
       </ul>
     </div>
 
@@ -65,45 +75,60 @@
     <div class="table-wrap">
       <table>
         <thead>
-          <tr><th style="width:20%;">比較項目</th><th style="width:40%;">共識觀點</th><th style="width:40%;">分歧觀點</th></tr>
+          <tr><th style="width:20%;">比較項目</th><th style="width:40%;">整理結果</th><th style="width:40%;">備註</th></tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>大盤趨勢</strong></td>
-            <td><span class="badge consensus">高檔震盪</span><br>在大漲後進行技術性修整，多頭趨勢仍由 10 日線支撐。</td>
-            <td><span class="badge divergence">指數空間</span><br><strong>林漢偉</strong>：中長多確認。<br><strong>楊育華</strong>：櫃買強於大盤。</td>
+            <td><strong>資料來源</strong></td>
+            <td><span class="badge consensus">官方優先</span><br>已改為使用你指定的五位分析師官方頻道／部落格來源。</td>
+            <td><span class="badge divergence">舊版修正</span><br>先前 4/9 部分頁面有引用非最穩定外部來源，現在已校正。</td>
           </tr>
           <tr>
-            <td><strong>操作策略</strong></td>
-            <td><span class="badge consensus">買黑不買紅</span><br>不追高，等待拉回支撐處分批佈局。</td>
-            <td><span class="badge divergence">選股重心</span><br><strong>蕭又銘</strong>：尋找下週黑馬。<br><strong>阮蕙慈</strong>：守住設備龍頭。</td>
+            <td><strong>更新策略</strong></td>
+            <td><span class="badge consensus">先部落格後頻道</span><br>之後每日影片先找部落格，再回官方 YouTube 驗證。</td>
+            <td><span class="badge divergence">搜尋工具</span><br>後續研究搜尋改優先 tavily-search。</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <h2>🔥 今日個股推薦 / 警戒清單</h2>
+    <h2>🎬 4/9 官方來源索引</h2>
     <div class="table-wrap">
       <table>
         <thead>
-          <tr><th style="width:20%;">類別</th><th style="width:40%;">推薦關注</th><th style="width:40%;">特別提醒 / 警戒</th></tr>
+          <tr><th>分析師</th><th>4/9 頁面</th><th>官方來源</th></tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>多方推薦</strong></td>
-            <td><span class="badge recommend">成長動能</span><br><strong>廣達(2382)</strong>、<strong>台積電(2330)</strong>、<strong>技嘉(2376)</strong></td>
-            <td><strong>阮蕙慈</strong>：弘塑、辛耘。<br><strong>楊惠宇</strong>：緯穎。</td>
+            <td>楊育華</td>
+            <td><a href="2026-04-09-yang-yu-hua.html">查看摘要頁</a></td>
+            <td><a href="https://www.youtube.com/channel/UCK1TfbeSlR0jc733Ep83Xfg" target="_blank">官方頻道</a></td>
           </tr>
           <tr>
-            <td><strong>警戒清單</strong></td>
-            <td><span class="badge warning">避險資產</span><br>黃金、原油相關 ETF 短線波動極大。</td>
-            <td>小心地緣政治消息導致的短線反轉。</td>
+            <td>楊惠宇</td>
+            <td><a href="2026-04-09-yang-hui-yu.html">查看摘要頁</a></td>
+            <td><a href="https://www.youtube.com/channel/UCuT73fzSYFCi777QV_S_vrQ" target="_blank">官方頻道</a></td>
+          </tr>
+          <tr>
+            <td>蕭又銘</td>
+            <td><a href="2026-04-09-hsiao-yu-ming.html">查看摘要頁</a></td>
+            <td><a href="https://www.youtube.com/channel/UCrvRFJUQQTamzhI62ccXGxQ" target="_blank">官方頻道</a></td>
+          </tr>
+          <tr>
+            <td>阮蕙慈</td>
+            <td><a href="2026-04-09-ruan-hui-tzu.html">查看摘要頁</a></td>
+            <td><a href="https://www.youtube.com/@power88888" target="_blank">官方頻道</a></td>
+          </tr>
+          <tr>
+            <td>林漢偉</td>
+            <td><a href="2026-04-09-lin-han-wei.html">查看摘要頁</a></td>
+            <td><a href="https://www.youtube.com/channel/UCleWOsRmPBhWPvQlSTy7fPw" target="_blank">官方頻道</a></td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <h2>🎬 歷日分析師影音索引</h2>
+    <h2>🗂 歷日分析師影音索引</h2>
     <div class="table-wrap">
       <table>
         <thead>
@@ -112,11 +137,11 @@
         <tbody>
           <tr>
             <td><strong>2026-04-09</strong></td>
-            <td><a href="2026-04-09-yang-yu-hua.html">櫃買創新高</a></td>
-            <td><a href="2026-04-09-yang-hui-yu.html">AI伺服器增溫</a></td>
-            <td><a href="2026-04-09-hsiao-yu-ming.html">下週漲停黑馬</a></td>
-            <td><a href="2026-04-09-ruan-hui-tzu.html">設備股強者恆強</a></td>
-            <td><a href="2026-04-09-lin-han-wei.html">中長多格局確認</a></td>
+            <td><a href="2026-04-09-yang-yu-hua.html">官方來源校正版</a></td>
+            <td><a href="2026-04-09-yang-hui-yu.html">官方來源校正版</a></td>
+            <td><a href="2026-04-09-hsiao-yu-ming.html">官方來源校正版</a></td>
+            <td><a href="2026-04-09-ruan-hui-tzu.html">官方來源校正版</a></td>
+            <td><a href="2026-04-09-lin-han-wei.html">官方來源校正版</a></td>
           </tr>
           <tr>
             <td><strong>2026-04-08</strong></td>
@@ -132,7 +157,7 @@
 
     <div class="footer">
       <p>© 2026 蝦妹財金分析部落格 | Alex 爸專屬財金助手</p>
-      <p style="font-size:.92rem;opacity:.8">最後更新：2026-04-09 18:30</p>
+      <p style="font-size:.92rem;opacity:.8">最後更新：2026-04-09 20:02</p>
     </div>
   </div>
 </body>
