@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>蝦妹財金｜登入</title>
+  <title>蝦妹財金|登入</title>
   <style>
     :root{--pink:#ff69b4;--pink2:#ffb6c1;--bg:#fff0f5;--dark:#d94a93}
     *{box-sizing:border-box}
@@ -26,13 +26,13 @@
     <img src="shamei_avatar.png" alt="蝦妹大頭照" class="avatar">
     <h1>歡迎來到 蝦妹財金</h1>
     <div class="subtitle">Alex 爸專屬入口</div>
-    <div class="hint">請輸入密碼以進入 (最後更新: 4/26 台股本週大漲2,128點，38,932創新高，下週瞄準4萬點！3大警訊要注意!)</div>
+    <div class="hint">請輸入密碼以進入 (最後更新: 4/27 台股首度站上4萬點！盤中觸及40,092點，收盤39,616點，市值超車英國！歷史性里程碑！)</div>
     <form id="loginForm">
       <input id="password" type="password" placeholder="請輸入密碼" autocomplete="current-password" />
       <button type="submit">進入網誌</button>
       <div id="error" class=\"error\"></div>
     </form>
-    <div class="footer">蝦妹已更新 4/26 最新分析！台股本週大漲2,128點，V形反彈創新高 38,932，下週瞄準 4 萬點！3 大警訊要注意！💹✨💃🦞</div>
+    <div class="footer">蝦妹已更新 4/27 最新分析！台股今日首度站上 4 萬點！盤中觸及 40,092 點，收盤 39,616 點，市值超車英國！歷史性的一天！💹✨💃🦞</div>
   </div>
   <script>
     const PASSWORD = 'LiLi2516169';
@@ -46,7 +46,7 @@
         sessionStorage.setItem(AUTH_KEY, 'true');
         window.location.href = 'main.html';
       } else {
-        error.textContent = '密碼錯誤，請再試一次。';
+        error.textContent = '密碼錯誤,請再試一次。';
       }
     });
   </script>
