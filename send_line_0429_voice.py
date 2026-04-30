@@ -1,0 +1,7 @@
+from linebot import LineBotApi
+from linebot.models import AudioSendMessage
+
+line_bot_api = LineBotApi('1/zSo34EKMV3FPQiGVo7rK83bI1w8xwY+5t0q+sLd0fZl8q0kOq1qX0xE1Q4pR2mN5nO6pQ7rS8tU9vV0wW1xX2yY3zA4aB5bC6cD7dE8eF9fG0gH1hI2iI3jJ4kK5lL6mM7nN8oO9pP0qQ1rR2sS3tT4uU5uV6vW7wW8xX9xY0yZ1zA2aA3bB4cC5dD6eE7fF8gG9hH0iI1iJ2jJ3kK4kL5lL6mM7mN8nN9oO0oP1pP2qQ3qR4rR5sS6sT7tT8uU9uV0vV1wW2wX3xX4yY5yZ6zA7zB8aA9aB0bB1cC2cD3dD4eE5eF6fF7gG8gH9hH0iI1iJ2jJ3kK4kL5lL6mM7mN8nN9oO0oP1pP2qQ3qR4rR5sS6sT7tT8uU9uV0vV1wW2wX3xX4yY5yZ6zA7zB8aA9aB=')
+audio_url = 'https://tmpfiles.org/dl/35706162/2026-04-29_voice.mp3'
+line_bot_api.push_message('Uecbea6f249d4b84e337808dfe0c36d0b', AudioSendMessage(original_content_url=audio_url, duration=57000))
+print("Voice message sent!")
